@@ -1,0 +1,17 @@
+module.exports = {
+  appName: "__app__name",
+  port: 4000,
+  jwt: {
+    secret: "__secret_key__",
+  },
+  db: {
+    mongoDb: "___your_mongo_db_connection_goes_here____",
+  },
+  passport: {
+    google: {
+      clientID:
+        "__your_google_client_ID_from_developer__console_account__",
+      clientSecret: "client_Secret_from_developer__console_account__",
+    },
+  },
+};

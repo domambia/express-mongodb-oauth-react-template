@@ -1,0 +1,47 @@
+{
+  "name": "once-app-api",
+  "version": "1.0.0",
+  "description": "This is the once app backend api",
+  "main": "src/index.js",
+  "scripts": {
+    "dev": "ts-node-dev src/index.ts",
+    "start": "ts-node src/index.ts",
+    "prod": "node dist/src/index.js",
+    "test": "ts-node-dev src/wallets/create-wallet.ts"
+  },
+  "keywords": [
+    "once",
+    "app"
+  ],
+  "author": "Omambia Mogaka Dauglous",
+  "license": "ISC",
+  "dependencies": {
+    "@types/dotenv": "^8.2.0",
+    "@types/express": "^4.17.7",
+    "@types/jsonwebtoken": "^8.5.0",
+    "@types/mongoose": "^5.7.32",
+    "@types/morgan": "^1.9.1",
+    "@types/multer": "^1.4.4",
+    "@types/sharp": "^0.26.0",
+    "@types/uuid": "^8.3.0",
+    "africastalking-ts": "^0.1.8",
+    "axios": "^0.21.1",
+    "dotenv": "^8.2.0",
+    "ethers": "^5.4.6",
+    "express": "^4.17.1",
+    "express-async-errors": "^3.1.1",
+    "express-validator": "^6.6.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.12.9",
+    "morgan": "^1.10.0",
+    "multer": "^1.4.2",
+    "passport": "^0.4.1",
+    "passport-google-oauth20": "^2.0.0",
+    "querystring": "^0.2.1",
+    "sharp": "^0.26.2",
+    "stringify": "^5.2.0",
+    "ts-node": "^8.10.2",
+    "ts-node-dev": "^1.0.0-pre.55",
+    "typescript": "^3.9.7"
+  }
+}
