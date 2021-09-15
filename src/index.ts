@@ -1,27 +1,24 @@
 import dotenv from "dotenv";
 import mongoose from "mongoose";
-
-dotenv.config({ path: ".env" });
+import { configs } from "./../config";
 
 import { app } from "./app";
 
 const start = async () => {
   if (
-    !process.env.JWT_SECRET &&
-    !process.env.AT_SECRET &&
-    !process.env.AT_USERNAME &&
-    !process.env.APP_NAME &&
-    !process.env.PORT &&
-    !process.env.DB_URL
+    !configs.jwt.secret &&
+    !configs.appName &&
+    !configs.port &&
+    !configs.db.mongoDb
   ) {
     throw new Error(
-      "APP_NAME && JWT_SECRET && AT_USERNAME && AT_SECRET && PORT $$ DB_URL  Must be defined in your .env FILE"
+      "Some required configurations is not provided. Please create config.ts folder in the project root directory and copy the contents of config.ts.example and replace with your information"
     );
   }
 
   /** GET ENV VARIABLES */
-  const DB_URL = process.env.DB_URL!;
-  const PORT = process.env.PORT! || 4000;
+  const DB_URL = configs.db.mongoDb!;
+  const PORT = configs.port! || 4000;
   try {
     await mongoose.connect(DB_URL, {
       useNewUrlParser: true,

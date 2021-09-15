@@ -1,11 +1,12 @@
 /** @format */
 
 import { Model, Schema, model, Document } from "mongoose";
-import {PasswordManager} from  "./../utils/index";
+import { PasswordManager } from "./../utils/index";
 
 interface Attrs {
   username: string;
   photo?: string;
+  googleID?: string;
   email: string;
   password: string;
 }
@@ -18,20 +19,22 @@ interface UserDoc extends Document {
   username: string;
   email: string;
   photo?: string;
-  password: string;
+  googleID?: string;
+  password?: string;
   created_at?: Date;
   is_active?: boolean;
 }
 
 const userSchema = new Schema(
   {
-    token: { type: String},
-    email: { type: String},
-    photo: {type:  String},
-    password: { type: String},
+    token: { type: String },
+    email: { type: String },
+    googleID: { type: String },
+    photo: { type: String },
+    password: { type: String },
     created_at: {
       type: Date,
-      default: Date.now
+      default: Date.now,
     },
     is_active: { type: Boolean, default: true },
   },
