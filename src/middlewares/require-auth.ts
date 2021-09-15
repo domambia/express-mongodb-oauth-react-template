@@ -2,7 +2,7 @@ import jwt from "jsonwebtoken";
 import { Request, Response, NextFunction } from "express";
 import { NotAuthorizedError } from "./../errors/not-authorized-error";
 import { Token } from "./../models/index";
-import { UserPayload } from "./../utils/interface";
+import { configs } from "../../config";
 
 export const requireAuth = async (
   req: Request,
@@ -33,10 +33,7 @@ export const requireAuth = async (
   /*Verify Token*/
 
   try {
-    const payload: any = jwt.verify(
-      token,
-      process.env.JWT_SECRET!
-    ) as UserPayload;
+    const payload: any = jwt.verify(token, configs.jwt.secret) as Express.User;
 
     if (!payload.id || payload.id === "") {
       throw new NotAuthorizedError();

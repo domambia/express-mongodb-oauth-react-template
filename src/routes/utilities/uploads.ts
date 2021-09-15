@@ -113,7 +113,7 @@ router.post(
         "You must provide the holding dirctory name field: dirName"
       );
     }
-    const file_name = `${full_url}/${req.body.dirName}/${req.file.filename}`;
+    const file_name = `${full_url}/${req.body.dirName}/${req.file?.filename}`;
 
     res.status(201).json({
       status: "success",
@@ -138,7 +138,7 @@ router.post(
         "You must provide the holding dirctory name field: dirName"
       );
     }
-    const file_name = `${full_url}/${req.body.dirName}/${req.file.filename}`;
+    const file_name = `${full_url}/${req.body.dirName}/${req.file?.filename}`;
 
     res.status(201).json({
       status: "success",

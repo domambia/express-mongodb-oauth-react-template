@@ -20,3 +20,6 @@ app.use([
   requestPasswordRest,
   restPassword,
 ]);
+
+import { OAuthPassportRoutes } from "./oauth/index";
+app.use([OAuthPassportRoutes]);

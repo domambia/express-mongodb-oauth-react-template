@@ -6,6 +6,7 @@ import { validateRequest } from "./../../middlewares/validate-request";
 import { BadRequestError } from "./../../errors/bad-request-error";
 import { PasswordManager } from "./../../utils/password";
 import { Token, User, UserDoc } from "../../models";
+import { configs } from "../../../config";
 
 const router = express.Router();
 router.post(
@@ -35,7 +36,7 @@ router.post(
         ...existingUser.toObject(),
         id: existingUser.id,
       },
-      process.env.JWT_SECRET!
+      configs.jwt.secret!
     );
 
     await Token.build({
